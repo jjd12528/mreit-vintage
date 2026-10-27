@@ -1,0 +1,758 @@
+{
+ "as_of": "2026-06-30",
+ "as_of_label": "6/30/2026",
+ "tickers": [
+  "RWT",
+  "MITT",
+  "MFA",
+  "CIM",
+  "RITM",
+  "EFC",
+  "AOMR"
+ ],
+ "names": {
+  "RWT": "Redwood Trust",
+  "MITT": "TPG Mortgage Investment Trust",
+  "MFA": "MFA Financial",
+  "CIM": "Chimera Investment",
+  "RITM": "Rithm Capital",
+  "EFC": "Ellington Financial",
+  "AOMR": "Angel Oak Mortgage REIT"
+ },
+ "years": [
+  "<=2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "reits": {
+  "RWT": {
+   "ce": 863839.0,
+   "app_net": 4234395.0,
+   "mapped_total": 5901335.0,
+   "note": "Consolidated Sequoia trusts are prime jumbo only. Aspire non-QM is sold through unconsolidated SPIRE deals with only IO retained, so RWT's non-QM exposure is its warehouse, not a retained book. The at-risk vintage exposure is CAFL term and bridge retained interests plus the Legacy Investments segment.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     66545.7,
+     0.0,
+     66545.7,
+     133091.4,
+     399274.2,
+     2977457.0
+    ],
+    "3 Legacy RPL / NPL": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     93000.0,
+     847000.0
+    ],
+    "4 Business purpose - bridge/transitional": [
+     147614.4,
+     196819.2,
+     147614.4,
+     23333.3333333333,
+     46666.6666666667,
+     114500.0
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     247750.2,
+     57304.98,
+     31210.26,
+     9414.78,
+     9414.78,
+     114500.0
+    ],
+    "6 Second lien, HELOC & HEI": [
+     76542.5,
+     76542.5,
+     0.0,
+     0.0,
+     9596.5,
+     9596.5
+    ],
+    "U Residential - unallocated": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    471907.1,
+    330666.68,
+    178824.66,
+    32748.1133333333,
+    65677.9466666667,
+    19596.5
+   ],
+   "perf": [
+    {
+     "pool": "Sequoia securities",
+     "measure": "90+ DQ % UPB",
+     "value": 0.002,
+     "source": "filing"
+    },
+    {
+     "pool": "CAFL term securities",
+     "measure": "90+ DQ % UPB",
+     "value": 0.087,
+     "source": "filing"
+    },
+    {
+     "pool": "CAFL bridge securities",
+     "measure": "90+ DQ % UPB",
+     "value": 0.063,
+     "source": "filing"
+    }
+   ]
+  },
+  "MITT": {
+   "ce": 318013.0,
+   "app_net": 1026223.0,
+   "mapped_total": 1256551.0,
+   "note": "No deal list. Year split rebuilt from MITT's own 10-K statements of what it securitized each year, run through the paydown model and scaled to the $6.40bn of Non-Agency VIE UPB. 'Non-Agency' VIEs hold agency-eligible investor loans as well as non-QM.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     20008.4656563152,
+     54597.8142920483,
+     22888.7055818572,
+     161892.815837111,
+     210069.198632669,
+     20638.0
+    ],
+    "3 Legacy RPL / NPL": [
+     11800.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     83990.1557174338,
+     99603.1748442925,
+     48718.6694382736,
+     0.0,
+     0.0,
+     45627.0
+    ],
+    "4 Business purpose - bridge/transitional": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "6 Second lien, HELOC & HEI": [
+     0.0,
+     0.0,
+     0.0,
+     24250.8,
+     222839.65,
+     229626.55
+    ],
+    "U Residential - unallocated": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    83990.1557174338,
+    99603.1748442925,
+    48718.6694382736,
+    24250.8,
+    176077.65,
+    81178.55
+   ],
+   "perf": [
+    {
+     "pool": "Securitized non-agency loans",
+     "measure": "60+ DQ % UPB",
+     "value": 0.0175,
+     "source": "filing"
+    },
+    {
+     "pool": "Securitized home equity loans",
+     "measure": "60+ DQ % UPB",
+     "value": 0.0083,
+     "source": "filing"
+    },
+    {
+     "pool": "Securitized RPL/NPL",
+     "measure": "60+ DQ % UPB",
+     "value": 0.117,
+     "source": "filing"
+    }
+   ]
+  },
+  "MFA": {
+   "ce": 1284480.0,
+   "app_net": 2564536.0,
+   "mapped_total": 2564536.0,
+   "note": "Discloses fair value by ORIGINATION year and product (10-Q Note 3). Used directly; the deal-year proxy is run separately as a check. Net = gross x MFA's net/gross ratio (securitized debt $6,203,332 against $8,767,867 of loans), applied uniformly = I.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "3 Legacy RPL / NPL": [
+     270601.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     465785.137853469,
+     137502.2441899,
+     133172.183409889,
+     227901.47649024,
+     481855.855830871,
+     212807.102225631
+    ],
+    "4 Business purpose - bridge/transitional": [
+     16253.2903576933,
+     35604.3694449985,
+     58561.8008546034,
+     37169.0413505079,
+     88493.3996846092,
+     47519.0983075877
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     118137.569073024,
+     133453.901849788,
+     57894.5480306088,
+     10856.7450617634,
+     474.42320411068,
+     18891.8127807058
+    ],
+    "6 Second lien, HELOC & HEI": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "U Residential - unallocated": [
+     11601.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    600175.997284186,
+    306560.515484686,
+    249628.532295101,
+    275927.262902512,
+    570823.678719591,
+    279218.013313925
+   ],
+   "perf": [
+    {
+     "pool": "Non-QM loans",
+     "measure": "60+ DQ % UPB",
+     "value": 0.042,
+     "source": "filing"
+    },
+    {
+     "pool": "Single-family rental (DSCR)",
+     "measure": "60+ DQ % UPB",
+     "value": 0.025,
+     "source": "filing"
+    },
+    {
+     "pool": "Single-family transitional (Lima One)",
+     "measure": "60+ DQ % UPB",
+     "value": 0.137,
+     "source": "filing"
+    },
+    {
+     "pool": "Multifamily transitional",
+     "measure": "60+ DQ % UPB",
+     "value": 0.244,
+     "source": "filing"
+    },
+    {
+     "pool": "Seasoned RPL/NPL",
+     "measure": "60+ DQ % UPB",
+     "value": 0.173,
+     "source": "filing"
+    }
+   ]
+  },
+  "CIM": {
+   "ce": 1485626.0,
+   "app_net": 3608974.0,
+   "mapped_total": 3608973.0,
+   "note": "Two answers. Deal year (deck p28 lists every consolidated CIM trust with retained face) misstates loan vintage, because the R and NR deals re-securitize 2005-07 loans. Loan origination year is in the 10-Q as % of HFI UPB, and that is what the tables use.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     106748.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "3 Legacy RPL / NPL": [
+     2070415.40136054,
+     119160.598639456,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     84484.5,
+     478745.5
+    ],
+    "4 Business purpose - bridge/transitional": [
+     0.0,
+     0.0,
+     4965.14285714286,
+     4965.14285714286,
+     4965.14285714286,
+     2482.57142857143
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     0.0,
+     76957.955882353,
+     45926.5220588235,
+     18370.6088235294,
+     112040.413235294,
+     478745.5
+    ],
+    "6 Second lien, HELOC & HEI": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "U Residential - unallocated": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    0.0,
+    76957.955882353,
+    50891.6649159664,
+    23335.7516806723,
+    32521.056092437,
+    2482.57142857143
+   ],
+   "perf": [
+    {
+     "pool": "Per-deal delinquency",
+     "measure": "not disclosed in 10-Q or deck",
+     "value": null,
+     "source": "-"
+    }
+   ]
+  },
+  "RITM": {
+   "ce": 6827758.0,
+   "app_net": 8125804.0,
+   "mapped_total": 9488759.0,
+   "note": "Two shelves matter: NRMLT non-QM deals (consolidated; RITM retains a vertical slice, the subordinates and the IO) and Genesis bridge loans, mostly held whole. The $763mm of retained notes in unconsolidated deals is legacy: average loan age 13.2 years.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     2502470.0
+    ],
+    "3 Legacy RPL / NPL": [
+     2105870.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     0.0,
+     0.0,
+     0.0,
+     67394.7315732379,
+     199909.488913442,
+     486386.779513321
+    ],
+    "4 Business purpose - bridge/transitional": [
+     0.0,
+     0.0,
+     0.0,
+     76646.24,
+     1456278.56,
+     2299387.2
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "6 Second lien, HELOC & HEI": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "U Residential - unallocated": [
+     294416.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    0.0,
+    0.0,
+    0.0,
+    67394.7315732379,
+    199909.488913442,
+    268780.779513321
+   ],
+   "perf": [
+    {
+     "pool": "Unconsolidated legacy trusts (retained notes)",
+     "measure": "60+ DQ % UPB",
+     "value": 0.038,
+     "source": "filing"
+    },
+    {
+     "pool": "Genesis transition loans",
+     "measure": "90+ DQ % UPB",
+     "value": 0.025,
+     "source": "filing"
+    }
+   ]
+  },
+  "EFC": {
+   "ce": 1736150.0,
+   "app_net": 118599.0,
+   "mapped_total": 2714023.0,
+   "note": "Best deal-level disclosure after CIM: the 10-K and 10-Q list every EFMT and RCKT deal since Dec-22 with EFC's own contribution. Deals EFC consolidates are all from Nov-19 to Jul-22. Reverse mortgages are left out, as in the app.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     183466.0
+    ],
+    "3 Legacy RPL / NPL": [
+     36895.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     71066.4171432803,
+     58056.3510029732,
+     6829.76861655646,
+     7161.33793154391,
+     173592.622574944,
+     674888.502730702
+    ],
+    "4 Business purpose - bridge/transitional": [
+     0.0,
+     0.0,
+     0.0,
+     32024.0,
+     243739.0,
+     384288.0
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     0.0,
+     0.0,
+     0.0,
+     20205.1159742792,
+     120814.877972885,
+     399627.006052836
+    ],
+    "6 Second lien, HELOC & HEI": [
+     0.0,
+     0.0,
+     0.0,
+     30915.9268237506,
+     158239.090729427,
+     112213.982446823
+    ],
+    "U Residential - unallocated": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    71066.4171432803,
+    58056.3510029732,
+    6829.76861655646,
+    58282.3807295736,
+    302775.191277256,
+    184885.891230361
+   ],
+   "perf": [
+    {
+     "pool": "Per-deal delinquency",
+     "measure": "not disclosed in 10-Q",
+     "value": null,
+     "source": "-"
+    }
+   ]
+  },
+  "AOMR": {
+   "ce": 234865.0,
+   "app_net": 921446.0,
+   "mapped_total": 682157.0,
+   "note": "Best discloser after MFA. The deck gives consolidated-trust UPB and 90+ DQ by deal vintage; the 10-Q gives the same for retained bonds of unconsolidated AOMT deals.",
+   "buckets": {
+    "1 Prime jumbo & agency-eligible": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "3 Legacy RPL / NPL": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "2 Non-QM / expanded credit": [
+     30128.2474870492,
+     36056.6495244087,
+     37137.5084701801,
+     63081.3529851931,
+     105087.690298582,
+     329071.551234587
+    ],
+    "4 Business purpose - bridge/transitional": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "5 Business purpose - rental/DSCR term": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "6 Second lien, HELOC & HEI": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     18189.1,
+     63404.9
+    ],
+    "U Residential - unallocated": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "at_risk_retained": [
+    30128.2474870492,
+    36056.6495244087,
+    37137.5084701801,
+    63081.3529851931,
+    57458.2902985815,
+    19504.9512345875
+   ],
+   "perf": [
+    {
+     "pool": "Consolidated AOMT trusts, 2021 vintage",
+     "measure": "90+ DQ % UPB",
+     "value": 0.026,
+     "source": "deck"
+    },
+    {
+     "pool": "Consolidated AOMT trusts, 2022 vintage",
+     "measure": "90+ DQ % UPB",
+     "value": 0.023,
+     "source": "deck"
+    },
+    {
+     "pool": "Consolidated AOMT trusts, 2023 vintage",
+     "measure": "90+ DQ % UPB",
+     "value": 0.029,
+     "source": "deck"
+    },
+    {
+     "pool": "Consolidated AOMT trusts, 2024 vintage",
+     "measure": "90+ DQ % UPB",
+     "value": 0.028,
+     "source": "deck"
+    },
+    {
+     "pool": "Consolidated AOMT trusts, 2025 vintage",
+     "measure": "90+ DQ % UPB",
+     "value": 0.017,
+     "source": "deck"
+    },
+    {
+     "pool": "Consolidated AOMT trusts, 2026 vintage",
+     "measure": "90+ DQ % UPB",
+     "value": 0,
+     "source": "deck"
+    },
+    {
+     "pool": "Unconsolidated AOMT 2019 deals (retained bonds)",
+     "measure": "90+ DQ % UPB",
+     "value": 0.036,
+     "source": "filing"
+    },
+    {
+     "pool": "Unconsolidated AOMT 2023 deals (retained bonds)",
+     "measure": "90+ DQ % UPB",
+     "value": 0.051,
+     "source": "filing"
+    },
+    {
+     "pool": "Unconsolidated AOMT 2024 deals (retained bonds)",
+     "measure": "90+ DQ % UPB",
+     "value": 0.031,
+     "source": "filing"
+    },
+    {
+     "pool": "Unconsolidated AOMT 2025 deals (retained bonds)",
+     "measure": "90+ DQ % UPB",
+     "value": 0.022,
+     "source": "filing"
+    }
+   ]
+  }
+ },
+ "mfa_check": [
+  {
+   "year": "Prior (<=2021)",
+   "disclosed": 0.344787512817591,
+   "proxy_v1": 0.129443196923241,
+   "proxy_v2": 0.223690277444486,
+   "disclosed_q1": 0.269
+  },
+  {
+   "year": "2022",
+   "disclosed": 0.119414378489233,
+   "proxy_v1": 0.146437693390433,
+   "proxy_v2": 0.154710232333641,
+   "disclosed_q1": 0.146
+  },
+  {
+   "year": "2023",
+   "disclosed": 0.0972427936652615,
+   "proxy_v1": 0.0731181360332341,
+   "proxy_v2": 0.129482368553791,
+   "disclosed_q1": 0.122
+  },
+  {
+   "year": "2024",
+   "disclosed": 0.107485473396377,
+   "proxy_v1": 0.17626224910303,
+   "proxy_v2": 0.119706726161161,
+   "disclosed_q1": 0.142
+  },
+  {
+   "year": "2025",
+   "disclosed": 0.222353879457674,
+   "proxy_v1": 0.1486924453809,
+   "proxy_v2": 0.204851931616857,
+   "disclosed_q1": 0.27
+  },
+  {
+   "year": "2026",
+   "disclosed": 0.108761535832289,
+   "proxy_v1": 0.326046279169162,
+   "proxy_v2": 0.167558463890064,
+   "disclosed_q1": 0.051
+  },
+  {
+   "year": "2022-2025",
+   "disclosed": 0.546496525008545,
+   "proxy_v1": 0.544510523907597,
+   "proxy_v2": 0.60875125866545,
+   "disclosed_q1": 0.68
+  },
+  {
+   "year": "2023-2024",
+   "disclosed": 0.204728267061638,
+   "proxy_v1": 0.249380385136264,
+   "proxy_v2": 0.249189094714952,
+   "disclosed_q1": 0.264
+  }
+ ]
+}
