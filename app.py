@@ -69,9 +69,9 @@ def ret_ratio(t, years):
     return sum(R[t]["at_risk_retained"][YEARS.index(y)] for y in years) / R[t]["ce"]
 
 
-Y2225, Y2324 = ["2022", "2023", "2024", "2025"], ["2023", "2024"]
+Y2225, Y2324, Y2325 = ["2022", "2023", "2024", "2025"], ["2023", "2024"], ["2023", "2024", "2025"]
 
-st.title("Non-agency mREITs: exposure to 2022–2025 production")
+st.title("Non-agency mREITs: exposure to recent production, by vintage")
 st.markdown(
     f"<p class='note'>As of {D['as_of_label']}. Proxy: each REIT's own-shelf residential exposure "
     "mapped to the <b>year its securitization closed</b> (or the loan's origination year where the REIT "
@@ -82,25 +82,26 @@ st.markdown(
 
 # ------------------------------------------------------------------ 1. ranking
 st.header("1. Ranking")
-df = pd.DataFrame({
-    "REIT": TK,
-    "2022–25 at-risk ÷ equity": [ratio(t, Y2225) for t in TK],
-    "2023–24 at-risk ÷ equity": [ratio(t, Y2324) for t in TK],
-    "Retained only, 22–25 ÷ equity": [ret_ratio(t, Y2225) for t in TK],
-    "2022–25 at-risk ($mm)": [atr(t, Y2225) / 1e3 for t in TK],
-})
-df = df.sort_values("2022–25 at-risk ÷ equity", ascending=False).reset_index(drop=True)
+WINDOWS = {"2022–25": Y2225, "2023–25": Y2325, "2023–24": Y2324}
+win = st.radio("Vintage window", list(WINDOWS), index=0, horizontal=True)
+WY = WINDOWS[win]
+COL = f"{win} at-risk ÷ equity"
+df = pd.DataFrame({"REIT": TK})
+df[COL] = [ratio(t, WY) for t in TK]
+df[f"Retained only, {win} ÷ equity"] = [ret_ratio(t, WY) for t in TK]
+df[f"{win} at-risk ($mm)"] = [atr(t, WY) / 1e3 for t in TK]
+df = df.sort_values(COL, ascending=False).reset_index(drop=True)
 df.index = df.index + 1
 c1, c2 = st.columns([1.1, 1])
 with c1:
     order = list(df["REIT"])[::-1]
     fig = go.Figure()
-    for y in Y2225:
+    for y in WY:
         fig.add_bar(y=order, x=[atr(t, [y]) / R[t]["ce"] for t in order], name=y, orientation="h",
                     marker_color=YEAR_COLORS[y],
                     hovertemplate="%{y} " + y + ": %{x:.2f}x equity<extra></extra>")
     fig.update_layout(barmode="stack", height=360, margin=dict(l=10, r=10, t=30, b=10),
-                      title=dict(text="2022–25 at-risk exposure ÷ common equity, by deal year",
+                      title=dict(text=f"{win} at-risk exposure ÷ common equity, by deal year",
                                  font=dict(color=INK, size=14)),
                       paper_bgcolor="#FFFFFF", plot_bgcolor="#FFFFFF", font=dict(color=INK),
                       legend=dict(orientation="h", y=-0.12, font=dict(color=INK), traceorder="normal"),
@@ -108,12 +109,13 @@ with c1:
                       yaxis=dict(color=INK))
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 with c2:
-    st.dataframe(df.style.format({"2022–25 at-risk ÷ equity": "{:.2f}x", "2023–24 at-risk ÷ equity": "{:.2f}x",
-                                  "Retained only, 22–25 ÷ equity": "{:.2f}x",
-                                  "2022–25 at-risk ($mm)": "{:,.0f}"}),
-                 width="stretch", height=300)
+    fmt = {c: "{:.2f}x" for c in df.columns if "÷" in c}
+    fmt[f"{win} at-risk ($mm)"] = "{:,.0f}"
+    st.dataframe(df.style.format(fmt), width="stretch", height=300)
     st.markdown("<p class='note'><b>Retained only</b> drops loans held unsecuritized "
-                "(warehouse and pipeline). It is the pure deal-year proxy.</p>", unsafe_allow_html=True)
+                "(warehouse and pipeline). It is the pure deal-year proxy. In the 2023–25 window, 2025 includes "
+                "an inferred 2025 share of loans held gross (Genesis 38%; AOMR, CIM and EFC pipeline 15%).</p>",
+                unsafe_allow_html=True)
 
 # ------------------------------------------------------------------ 2. per REIT
 st.header("2. Each REIT by year and loan type")
@@ -133,9 +135,9 @@ for col, t in zip(cols, TK):
         fig.add_bar(x=["≤2021", "2022", "2023", "2024", "2025", "2026"], y=v, name=SHORT[b], marker_color=c,
                     showlegend=(t == TK[0]),
                     hovertemplate=SHORT[b] + " %{x}: %{y:.2f}x<extra></extra>")
-    fig.update_layout(barmode="stack", height=300, margin=dict(l=5, r=5, t=40, b=5),
+    fig.update_layout(barmode="stack", height=320, margin=dict(l=5, r=5, t=58, b=5),
                       title=dict(text=f"<b>{t}</b><br><span style='font-size:11px;color:{MUTE}'>"
-                                      f"22–25: {ratio(t, Y2225):.2f}x · 23–24: {ratio(t, Y2324):.2f}x</span>",
+                                      f"22–25: {ratio(t, Y2225):.2f}x · 23–25: {ratio(t, Y2325):.2f}x<br>23–24: {ratio(t, Y2324):.2f}x</span>",
                                  font=dict(color=INK, size=14)),
                       paper_bgcolor="#FFFFFF", plot_bgcolor="#FFFFFF", font=dict(color=INK, size=10),
                       showlegend=False, xaxis=dict(color=INK, type="category", tickangle=-45),
@@ -150,7 +152,7 @@ with st.expander("What drives each REIT, and how solid the year split is"):
 
 # ------------------------------------------------------------------ 3. MFA check
 st.header("3. Does the proxy work? The MFA check")
-m = [r for r in D["mfa_check"] if r["year"] not in ("2022-2025", "2023-2024")]
+m = [r for r in D["mfa_check"] if r["year"] not in ("2022-2025", "2023-2024", "2023-2025")]
 fig = go.Figure()
 xs = [r["year"].replace("Prior (<=2021)", "≤2021") for r in m]
 fig.add_bar(x=xs, y=[r["disclosed"] for r in m], name="MFA disclosed (6/30/26)", marker_color="#1F3864")
@@ -169,6 +171,7 @@ with c2:
         f"MFA is the one REIT that discloses dollars by origination year, so the proxy was run on MFA's own "
         f"deal history and compared.\n\n"
         f"- **2022–25 share:** proxy {s['2022-2025']['proxy_v2']:.0%} vs disclosed {s['2022-2025']['disclosed']:.0%}.\n"
+        f"- **2023–25 share:** proxy {s['2023-2025']['proxy_v2']:.0%} vs disclosed {s['2023-2025']['disclosed']:.0%}.\n"
         f"- **2023–24 share:** proxy {s['2023-2024']['proxy_v2']:.0%} vs disclosed {s['2023-2024']['disclosed']:.0%}.\n"
         "- The naive version failed because re-securitizations put old loans into new deal years. "
         "The version used moves those deals back to the loans' years.\n"
